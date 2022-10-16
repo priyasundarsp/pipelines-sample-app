@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: priyasundarsppipelinessampleapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: priyasundarsppipelinessampleapp
+  template:
+    metadata:
+      labels:
+        app: priyasundarsppipelinessampleapp 
+    spec:
+      containers:
+        - name: priyasundarsppipelinessampleapp 
+          image: azconfdemoacr01.azurecr.io/priyasundarsppipelinessampleapp
+          ports:
+          - containerPort: 3000
